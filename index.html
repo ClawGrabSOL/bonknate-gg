@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#FFD60A" />
+<title>Bonknate.gg — Give with $BONK</title>
+<meta name="description" content="Bonknate.gg — launch a memecoin, route a slice of its fees straight to charity, and support causes with $BONK. Open, instant, on Solana." />
+<link rel="icon" type="image/png" href="public/logo.png" />
+<link rel="apple-touch-icon" href="public/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Bonknate.gg">
+        <img src="public/logo.png" alt="" class="brand-mark" />
+        <span class="brand-word">bonknate<span class="brand-dot">.gg</span></span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="#campaigns">Charities</a>
+        <a href="#tokens">Tokens</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="header-cta">
+        <button class="btn btn-ghost" id="open-launch">Launch a token</button>
+        <button class="btn btn-primary" id="connect-wallet" aria-live="polite">Connect Wallet</button>
+      </div>
+      <button class="hamburger" aria-label="Menu" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Powered by $BONK · Solana</span>
+          <h1 id="hero-title" class="display">
+            Bonk your way<br/>to <em>doing good.</em>
+          </h1>
+          <p class="lead">
+            Launch a memecoin in seconds, pick a charity, and stream a slice of every trade
+            straight to a cause that matters. Open, instant, transparent — all in $BONK.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" id="hero-launch">Launch a token</button>
+            <a class="btn btn-ghost btn-lg" href="#campaigns">Explore charities</a>
+          </div>
+          <ul class="hero-trust" aria-label="Trust signals">
+            <li>Instant trades</li>
+            <li>Non-custodial</li>
+            <li>Fees stream to charity</li>
+          </ul>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-card hero-card-1">
+            <div class="hc-row">
+              <img src="public/logo.png" alt="" />
+              <div>
+                <strong>Your token</strong>
+                <span class="muted">Name, ticker, supply</span>
+              </div>
+            </div>
+            <div class="hc-row sm">
+              <span class="muted">Charity</span><strong>You choose</strong>
+              <span class="muted">Fee</span><strong>1&ndash;5%</strong>
+            </div>
+          </div>
+          <div class="hero-card hero-card-2">
+            <div class="hc-row">
+              <strong>Fees route in $BONK</strong>
+            </div>
+            <p class="big-num">Every trade</p>
+            <p class="muted">streams to the charity wallet you locked in at launch.</p>
+          </div>
+          <div class="hero-card hero-card-3">
+            <p class="muted">Network</p>
+            <p class="huge">Solana</p>
+            <p class="muted">Instant. Cheap. On-chain.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works strip -->
+    <section class="impact" aria-labelledby="impact-title">
+      <div class="container">
+        <p class="section-eyebrow">How it works</p>
+        <h2 id="impact-title" class="section-title">Built for tokens that <em>give back.</em></h2>
+        <div class="impact-grid">
+          <div class="stat">
+            <p class="stat-num">Launch</p>
+            <p class="stat-label">Deploy a charity-coin on Solana with a name, ticker, and image.</p>
+          </div>
+          <div class="stat">
+            <p class="stat-num">Pick</p>
+            <p class="stat-label">Choose a verified charity wallet to receive trading fees.</p>
+          </div>
+          <div class="stat">
+            <p class="stat-num">Stream</p>
+            <p class="stat-label">A 1&ndash;5% slice of every trade auto-converts to $BONK and routes on-chain.</p>
+          </div>
+          <div class="stat">
+            <p class="stat-num">Prove</p>
+            <p class="stat-label">Every transfer is public. Anyone can audit the flow from trade to charity.</p>
+          </div>
+        </div>
+        <p class="impact-note">Brand new platform &mdash; no tokens launched yet. <a href="#tokens">Be the first.</a></p>
+      </div>
+    </section>
+
+    <!-- Charities -->
+    <section class="campaigns" id="campaigns" aria-labelledby="campaigns-title">
+      <div class="container">
+        <p class="section-eyebrow">Charities</p>
+        <h2 id="campaigns-title" class="section-title">Pick a cause. <em>Bonk it forward.</em></h2>
+        <p class="section-sub">These are the partner charities a token creator can route fees to. Pick yours at launch.</p>
+        <div class="card-grid" id="charity-grid"></div>
+      </div>
+    </section>
+
+    <!-- Tokens / Launch -->
+    <section class="tokens" id="tokens" aria-labelledby="tokens-title">
+      <div class="container tokens-grid">
+        <div>
+          <p class="section-eyebrow">Tokens</p>
+          <h2 id="tokens-title" class="section-title">Launch a token in <em>under a minute.</em></h2>
+          <ul class="check-list">
+            <li><span>1</span> Upload your logo, name your coin, pick a ticker.</li>
+            <li><span>2</span> Choose a charity to receive trading fees.</li>
+            <li><span>3</span> Set the fee % (1–5%) that streams in $BONK.</li>
+            <li><span>4</span> Connect a Solana wallet and deploy. Done.</li>
+          </ul>
+          <button class="btn btn-primary btn-lg" id="cta-launch">Launch a token →</button>
+        </div>
+        <div class="tokens-empty" role="status">
+          <img src="public/logo.png" alt="" />
+          <h3>No coins yet — be the first.</h3>
+          <p>The launchpad just opened. The first token here is going to be a story.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works / Features -->
+    <section class="features" id="how" aria-labelledby="features-title">
+      <div class="container">
+        <p class="section-eyebrow">Product</p>
+        <h2 id="features-title" class="section-title">Built for fundraisers <em>and degens.</em></h2>
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>Launchpad</h3>
+            <p>Spin up a SPL token with a logo, ticker, and supply. No code, no contracts to write.</p>
+          </article>
+          <article class="feature">
+            <h3>Charity fees</h3>
+            <p>A configurable slice of every buy and sell auto-converts to $BONK and streams to the chosen charity wallet.</p>
+          </article>
+          <article class="feature">
+            <h3>Live dashboard <span class="soon">Soon</span></h3>
+            <p>Every donation is on-chain. Track lifetime giving, top supporters, and proof of impact.</p>
+          </article>
+          <article class="feature">
+            <h3>Verified charities</h3>
+            <p>Only vetted, real-world charity wallets are eligible. Request a new charity any time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Principles -->
+    <section class="community" aria-labelledby="community-title">
+      <div class="container">
+        <p class="section-eyebrow">Principles</p>
+        <h2 id="community-title" class="section-title">What we stand for.</h2>
+        <div class="quote-grid">
+          <blockquote class="quote">
+            <p><strong>Transparent by default.</strong> Every fee route is on-chain. No black boxes, no off-chain accounting.</p>
+          </blockquote>
+          <blockquote class="quote">
+            <p><strong>Creators stay in control.</strong> You pick the charity and the fee at launch. The wallet is locked in &mdash; you can&rsquo;t lower it later.</p>
+          </blockquote>
+          <blockquote class="quote">
+            <p><strong>Charities first.</strong> Only verified, real-world charity wallets are eligible. We vet every listing.</p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <p class="section-eyebrow">FAQ</p>
+        <h2 id="faq-title" class="section-title">Quick answers.</h2>
+        <div class="faq-list">
+          <details><summary>What is Bonknate.gg?</summary><p>A Solana launchpad where every token you mint can stream a percentage of its trading fees to a verified charity, settled in $BONK.</p></details>
+          <details><summary>Do I need to hold $BONK to launch?</summary><p>No. You pay a tiny Solana network fee to deploy. Trading fees are auto-swapped into $BONK before being sent to the charity wallet.</p></details>
+          <details><summary>Can I add my own charity?</summary><p>Yes — use the “Request a charity” link in the footer. We verify the org and wallet before listing.</p></details>
+          <details><summary>What wallets are supported?</summary><p>Any Solana wallet that speaks the Wallet Standard — Phantom, Solflare, Backpack, Glow, and more.</p></details>
+          <details><summary>Is the fee % locked after launch?</summary><p>Yes. The charity wallet and fee % are set at deploy time and can't be lowered — only raised by creator vote.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" aria-labelledby="cta-title">
+      <div class="container cta-card">
+        <h2 id="cta-title">Ready to bonk for good?</h2>
+        <p>Connect your wallet, name your coin, and pick a cause. We'll handle the rest.</p>
+        <div class="cta-actions">
+          <button class="btn btn-dark btn-lg" id="cta-connect">Connect Wallet</button>
+          <button class="btn btn-ghost-dark btn-lg" id="cta-launch-2">Launch a token</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <img src="public/logo.png" alt="" class="brand-mark" />
+          <span class="brand-word">bonknate<span class="brand-dot">.gg</span></span>
+        </a>
+        <p class="muted">Give the way you want — with a memecoin that bites back, for good.</p>
+      </div>
+      <div>
+        <p class="foot-title">Product</p>
+        <a href="#tokens">Launch</a>
+        <a href="#campaigns">Charities</a>
+        <a href="#how">How it works</a>
+      </div>
+      <div>
+        <p class="foot-title">Resources</p>
+        <a href="#faq">FAQ</a>
+        <a href="#">Docs</a>
+        <a href="#">Brand kit</a>
+      </div>
+      <div>
+        <p class="foot-title">Legal</p>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+      </div>
+      <div>
+        <p class="foot-title">Connect</p>
+        <a href="#">Request a charity</a>
+        <a href="#">Contact</a>
+        <a href="#">X / Twitter</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>Give the way you want, to the causes you care about.</p>
+      <p>© 2026 Bonknate.gg · Not affiliated with the BONK team.</p>
+    </div>
+  </footer>
+
+  <!-- Launch Token Modal -->
+  <div class="modal" id="launch-modal" role="dialog" aria-modal="true" aria-labelledby="launch-title" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="document">
+      <button class="modal-x" data-close aria-label="Close">×</button>
+      <h2 id="launch-title">Launch a charity token</h2>
+      <p class="muted">All fields are required. Your token will be deployed on Solana with the charity wallet locked in.</p>
+      <form id="launch-form" novalidate>
+        <div class="upload" id="upload">
+          <input type="file" id="token-image" accept="image/*" hidden />
+          <div class="upload-inner" id="upload-inner">
+            <p><strong>Upload token image</strong></p>
+            <p class="muted small">PNG, JPG or SVG &middot; square works best &middot; click or drop</p>
+          </div>
+          <img id="upload-preview" alt="" hidden />
+        </div>
+
+        <div class="grid-2">
+          <label class="field">
+            <span>Token name</span>
+            <input type="text" id="token-name" placeholder="e.g. BonkBuddy" maxlength="32" required />
+          </label>
+          <label class="field">
+            <span>Ticker</span>
+            <input type="text" id="token-ticker" placeholder="e.g. BBUD" maxlength="10" required />
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Description</span>
+          <textarea id="token-desc" rows="3" placeholder="What's your coin about?" maxlength="280"></textarea>
+        </label>
+
+        <div class="grid-2">
+          <label class="field">
+            <span>Total supply</span>
+            <input type="number" id="token-supply" placeholder="1,000,000,000" min="1000" required />
+          </label>
+          <label class="field">
+            <span>Charity fee (%)</span>
+            <input type="range" id="token-fee" min="1" max="5" step="0.5" value="2" />
+            <span class="range-val"><b id="fee-val">2.0</b>% of every trade → charity</span>
+          </label>
+        </div>
+
+        <fieldset class="field charities-field">
+          <legend>Send fees to</legend>
+          <div class="charity-pick" id="charity-pick"></div>
+          <p class="muted small" id="custom-charity-help">Or add a custom Solana wallet:</p>
+          <input type="text" id="custom-charity" placeholder="Charity Solana address (optional)" />
+        </fieldset>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+          <button type="submit" class="btn btn-primary">Deploy token</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Wallet modal -->
+  <div class="modal" id="wallet-modal" role="dialog" aria-modal="true" aria-labelledby="wallet-title" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card sm" role="document">
+      <button class="modal-x" data-close aria-label="Close">×</button>
+      <h2 id="wallet-title">Connect a wallet</h2>
+      <p class="muted">Pick a Solana wallet to continue. Non-custodial — you keep your keys.</p>
+      <ul class="wallet-list">
+        <li><button class="wallet-opt" data-wallet="Phantom">Phantom <span class="muted">Detected</span></button></li>
+        <li><button class="wallet-opt" data-wallet="Solflare">Solflare</button></li>
+        <li><button class="wallet-opt" data-wallet="Backpack">Backpack</button></li>
+        <li><button class="wallet-opt" data-wallet="Glow">Glow</button></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
