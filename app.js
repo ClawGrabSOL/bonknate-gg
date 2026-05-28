@@ -1,15 +1,15 @@
-// =================== Bonknate.gg — front-end logic ===================
+// =================== donate.inu — front-end logic ===================
 // Pure vanilla JS. No deps. All state local; wallet flow is mocked so the
 // site is fully runnable as static files.
 
 // ---------- Data: featured partner charities ----------
 const CHARITIES = [
-  { id: 'st-jude',    name: "St. Jude Children's Research Hospital", tag: 'Kids · Health',  initials: 'SJ', wallet: 'StJudeF1xCh4r1tyWa11et4Bonknate1111111111' },
-  { id: 'water-org',  name: 'Water.org',                              tag: 'Clean water',    initials: 'WO', wallet: 'WaTeR0rgF1xCh4r1tyWa11et4Bonknate11111' },
-  { id: 'team-trees', name: 'Team Trees',                             tag: 'Reforestation',  initials: 'TT', wallet: 'TeamTreesF1xCh4r1tyWa11et4Bonknate1111' },
-  { id: 'doctors',    name: 'Doctors Without Borders',                tag: 'Humanitarian',   initials: 'DWB',wallet: 'D0ct0rsF1xCh4r1tyWa11et4Bonknate111111' },
-  { id: 'givedirect', name: 'GiveDirectly',                           tag: 'Cash transfers', initials: 'GD', wallet: 'G1veD1rectF1xCh4r1tyWa11et4Bonknate11' },
-  { id: 'rainforest', name: 'Rainforest Foundation',                  tag: 'Environment',    initials: 'RF', wallet: 'Ra1nF0restF1xCh4r1tyWa11et4Bonknate1' },
+  { id: 'st-jude',    name: "St. Jude Children's Research Hospital", tag: 'Kids · Health',  initials: 'SJ', wallet: 'StJudeF1xCh4r1tyWa11et4D0nate1nu1111111' },
+  { id: 'water-org',  name: 'Water.org',                              tag: 'Clean water',    initials: 'WO', wallet: 'WaTeR0rgF1xCh4r1tyWa11et4D0nate1nu11' },
+  { id: 'team-trees', name: 'Team Trees',                             tag: 'Reforestation',  initials: 'TT', wallet: 'TeamTreesF1xCh4r1tyWa11et4D0nate1nu1' },
+  { id: 'doctors',    name: 'Doctors Without Borders',                tag: 'Humanitarian',   initials: 'DWB',wallet: 'D0ct0rsF1xCh4r1tyWa11et4D0nate1nu1111' },
+  { id: 'givedirect', name: 'GiveDirectly',                           tag: 'Cash transfers', initials: 'GD', wallet: 'G1veD1rectF1xCh4r1tyWa11et4D0nate1nu' },
+  { id: 'rainforest', name: 'Rainforest Foundation',                  tag: 'Environment',    initials: 'RF', wallet: 'Ra1nF0restF1xCh4r1tyWa11et4D0nate1nu' },
 ];
 
 // ---------- Helpers ----------
@@ -215,7 +215,7 @@ function wireLaunch(){
     // Mock deploy
     closeModal($('#launch-modal'));
     toast(`$${ticker} (${name}) deploying · ${feeP.toFixed(1)}% fees → ${charityName}`);
-    console.log('[bonknate] launch payload', { name, ticker, supply, feeP, charityId: custom || charityId, by: wallet.address });
+    console.log('[donate.inu] launch payload', { name, ticker, supply, feeP, charityId: custom || charityId, by: wallet.address });
   });
 }
 

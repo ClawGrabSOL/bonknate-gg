@@ -1,4 +1,4 @@
-# bonknate.gg
+# donate.inu
 
 A Solana launchpad for **charity-coins** — memecoins that stream a slice of every trade, in $BONK, straight to a verified charity wallet.
 
@@ -16,7 +16,7 @@ A Solana launchpad for **charity-coins** — memecoins that stream a slice of ev
 Pure static site — no build step.
 
 - `index.html` — markup
-- `styles.css` — theme (yellow `#FFD60A` + orange `#F26B1F` from the logo, neo-brutalist cards, Fraunces + Sora)
+- `styles.css` — theme tokens, neo-brutalist cards, Fraunces + Sora
 - `app.js` — wallet connect modal, launch-token modal with image upload, charity picker, mocked deploy
 - `public/logo.png` — brand mark + favicon
 
@@ -35,7 +35,7 @@ Or just double-click `index.html`.
 Two integration points in `app.js`:
 
 1. **`wireWallet()`** — swap the mock for `@solana/wallet-adapter-base` / `@solana/wallet-adapter-react`.
-2. **`#launch-form` submit handler** — the `console.log('[bonknate] launch payload', …)` is the exact shape to feed into a Token-2022 mint with `TransferFeeConfig`, where the withheld-fees authority is the charity wallet.
+2. **`#launch-form` submit handler** — the `console.log('[donate.inu] launch payload', …)` is the exact shape to feed into a Token-2022 mint with `TransferFeeConfig`, where the withheld-fees authority is the charity wallet.
 
 ## Charities
 
